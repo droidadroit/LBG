@@ -33,6 +33,7 @@ Set this to the size of the blocks you want the image to be divided into. Make s
 perturbation_vector
 ```
 This is to be set only for `lbg_split.py`.  
-Please read the [wiki](https://github.com/droidadroit/LBG/wiki/LBG) for an understanding of the above terms.
+
+**Please read the [wiki](https://github.com/droidadroit/LBG/wiki/LBG) for an understanding of the above terms.**
 
 
