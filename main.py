@@ -26,17 +26,18 @@ def get_centroids(c, p):
     return final_centroids
 
 # source image
-image_location = "../Lenna.png"
+image_location = "Lenna.png"
 image = cv2.imread(image_location, cv2.IMREAD_GRAYSCALE)
 image_height = len(image)
 image_width = len(image[0])
 
+bits_per_codevector = 2;
 # dimension of the vector
 block_width = 4
 block_height = 4
 vector_dimension = block_width*block_height
 
-codebook_size = pow(2, 2)
+codebook_size = pow(2, bits_per_codevector)
 perturbation_vector = np.full(vector_dimension, 10)
 
 image_vectors = []
@@ -57,10 +58,6 @@ for i in range(0, int(log(codebook_size/2, 2)), 1):
     reconstruction_values = get_centroids(reconstruction_values, perturbation_vector)
     reconstruction_values, distortion = kmeans(image_vectors, reconstruction_values)
 
-print reconstruction_values, "\n", "CODEBOOK SIZE = ", codebook_size
-
-print "time = ", time.clock() - start
-
 image_vector_indices, distance = vq(image_vectors, reconstruction_values)
 
 image_after_compression = np.zeros([image_width, image_height], dtype="uint8")
@@ -73,9 +70,7 @@ for index, image_vector in enumerate(image_vectors):
         np.reshape(reconstruction_values[image_vector_indices[index]],
                    (block_width, block_height))
 
-# output_image_name = "CB_size=" + str(codebook_size) + ".png"
-# scipy.misc.imsave(output_image_name, image_after_compression)
+output_image_name = "CB_size=" + str(codebook_size) + ".png"
+scipy.misc.imsave(output_image_name, image_after_compression)
 
-print mse(image, image_after_compression)
-
-#print image_vectors, image_vectors_after_compression
+print "Mean square error = " + str(mse(image, image_after_compression))
