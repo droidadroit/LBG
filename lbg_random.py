@@ -33,7 +33,6 @@ block_height = 4
 vector_dimension = block_width*block_height
 
 codebook_size = pow(2, bits_per_codevector)
-perturbation_vector = np.full(vector_dimension, 10)
 
 image_vectors = []
 for i in range(0, image_width, block_width):
