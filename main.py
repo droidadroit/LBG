@@ -32,7 +32,8 @@ image_height = len(image)
 image_width = len(image[0])
 
 bits_per_codevector = 2;
-# dimension of the vector
+
+# dimension of the image vector
 block_width = 4
 block_height = 4
 vector_dimension = block_width*block_height
