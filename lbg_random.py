@@ -1,11 +1,7 @@
 import cv2
 import numpy as np
 from scipy.cluster.vq import vq, kmeans, whiten
-from math import log
 import scipy.misc
-from math import sqrt
-from sklearn.metrics import mean_squared_error
-import time
 
 
 def mse(image_a, image_b):
@@ -45,8 +41,6 @@ for i in range(0, image_width, block_width):
         image_vectors.append(np.reshape(image[i:i+block_width, j:j+block_height], vector_dimension))
 image_vectors = np.asarray(image_vectors).astype(float)
 number_of_image_vectors = image_vectors.shape[0]
-
-start = time.clock()
 
 centroids = 255 * np.random.rand(codebook_size, vector_dimension)
 
