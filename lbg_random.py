@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 from scipy.cluster.vq import vq, kmeans, whiten
 import scipy.misc
+import sys
 
 
 def mse(image_a, image_b):
@@ -20,18 +21,17 @@ def get_centroids(c, p):
     return final_centroids
 
 # source image
-image_location = "Lenna.png"
+image_location = sys.argv[1]
 image = cv2.imread(image_location, cv2.IMREAD_GRAYSCALE)
 image_height = len(image)
 image_width = len(image[0])
 
-bits_per_codevector = 2
-
 # dimension of the vector
-block_width = 4
-block_height = 4
+block_width = int(sys.argv[3])
+block_height = int(sys.argv[4])
 vector_dimension = block_width*block_height
 
+bits_per_codevector = int(sys.argv[2])
 codebook_size = pow(2, bits_per_codevector)
 
 image_vectors = []
