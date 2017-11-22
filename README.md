@@ -1,5 +1,5 @@
 # Image compression using LBG
-A lenna image is compressed using Linde-Buzo-Gray algorithm for vector quantization. The image is divided into blocks of size *4 x 4* and the corresponding vectors are fed to the LBG algorithm. This generates a codebook of a predetermined size which is used to generate the reconstructed image.  
+A lenna image is compressed by vector quantization using Linde-Buzo-Gray algorithm. The image is divided into blocks of size `4 x 4` and the corresponding vectors are fed to the LBG algorithm. This generates a codebook of a predetermined size which is used to generate the reconstructed image.  
 ## Getting Started
 ### Prerequisites
 ```
@@ -18,21 +18,20 @@ OpenCV for Python 2.7
 ```
 This [page](https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_setup/py_setup_in_windows/py_setup_in_windows.html) explains it quite well.  
 ## Running
-Run `lbg_random.py` for randomly initialized codebook. Run `lbg_split.py` for codebook initialized by splitting technique.  
-There are a few parameters to be set before running the code.  
+Before running `lbg_random.py` for randomly initialized codebook and `lbg_split.py` for codebook initialized by splitting technique, there are a few parameters to be set.  
 ```python
-rel_image_path
+image_location
 bits_per_codevector
 block_width
 block_height
 ```  
-`rel_image_path` is set to the relative location of the image from the current directory.  
-`bits_per_codevector` is set based on the size of the codebook you desire. For e.g., for a 256-vector codebook, this value should be 8 as 2^8=256.  
+`image_location` is set to the relative location of the image from the current directory.  
+`bits_per_codevector` is set based on the size of the codebook you desire. For e.g., for a 256-vector codebook, this value should be `8` as `2^8 = 256`.  
 `block_width` and `block_height` are set to the size of the blocks the image is divided into. Make sure the blocks cover the the entire image.  
 `perturbation_vector` in `lbg_split.py` can be changed manually.  
 
 Once the parameters are set, enter the following command to run the script.  
-`python [name of the script] [rel_image_path] [bits_per_codevector] [block_width] [block_height]`
+`python [name of the script] [image_location] [bits_per_codevector] [block_width] [block_height]`
 
 **Please read the [wiki](https://github.com/droidadroit/LBG/wiki/LBG) for an understanding of the above terms.**  
 ## Results
