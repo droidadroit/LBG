@@ -5,9 +5,7 @@ import numpy as np
 from scipy.cluster.vq import vq, kmeans, whiten
 from math import log
 import scipy.misc
-from math import sqrt
-from sklearn.metrics import mean_squared_error
-import time
+import sys
 
 
 def mse(image_a, image_b):
@@ -25,19 +23,19 @@ def get_centroids(c, p):
         final_centroids = np.vstack((final_centroids, np.add(centroid, p)))
     return final_centroids
 
+
 # source image
-image_location = "Lenna.png"
+image_location = sys.argv[1]
 image = cv2.imread(image_location, cv2.IMREAD_GRAYSCALE)
 image_height = len(image)
 image_width = len(image[0])
 
-bits_per_codevector = 2;
-
-# dimension of the image vector
-block_width = 4
-block_height = 4
+# dimensions of an image block
+block_width = int(sys.argv[3])
+block_height = int(sys.argv[4])
 vector_dimension = block_width*block_height
 
+bits_per_codevector = int(sys.argv[2])
 codebook_size = pow(2, bits_per_codevector)
 perturbation_vector = np.full(vector_dimension, 10)
 
@@ -47,8 +45,6 @@ for i in range(0, image_width, block_width):
         image_vectors.append(np.reshape(image[i:i+block_width, j:j+block_height], vector_dimension))
 image_vectors = np.asarray(image_vectors).astype(float)
 number_of_image_vectors = image_vectors.shape[0]
-
-start = time.clock()
 
 centroid_vector = np.mean(image_vectors, axis=0)
 centroids = np.vstack((centroid_vector, np.add(centroid_vector, perturbation_vector)))
