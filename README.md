@@ -29,9 +29,9 @@ block_height
 `rel_image_path` is set to the relative location of the image from the current directory.  
 `bits_per_codevector` is set based on the size of the codebook you desire. For e.g., for a 256-vector codebook, this value should be 8 as 2^8=256.  
 `block_width` and `block_height` are set to the size of the blocks the image is divided into. Make sure the blocks cover the the entire image.  
-The perturbation vector in `lbg_split.py` can be changed manually.  
+`perturbation_vector` in `lbg_split.py` can be changed manually.  
 
-Enter the command below to run the script.  
+Once the parameters are set, enter the following command to run the script.  
 `python [name of the script] [rel_image_path] [bits_per_codevector] [block_width] [block_height]`
 
 **Please read the [wiki](https://github.com/droidadroit/LBG/wiki/LBG) for an understanding of the above terms.**  
