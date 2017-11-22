@@ -37,4 +37,13 @@ Enter the command below to run the script.
 **Please read the [wiki](https://github.com/droidadroit/LBG/wiki/LBG) for an understanding of the above terms.**  
 ## Results
 For the image compressed using `lbg_random.py`, click [here](https://github.com/droidadroit/LBG/tree/master/Results/lbg_random).  
-For the image compressed using `lbg_split.py`, click [here](https://github.com/droidadroit/LBG/tree/master/Results/lbg_split).
+For the image compressed using `lbg_split.py`, click [here](https://github.com/droidadroit/LBG/tree/master/Results/lbg_split).  
+
+The following are the parameters used.  
+```python
+block_width = 4
+block_height = 4
+```
+`bits_per_codevector` ranged from `1` to `10`.
+
+
