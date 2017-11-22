@@ -9,10 +9,14 @@ Anaconda for Python 2.7
 OpenCV for Python 2.7
 ```
 ### Installing
-> Anaconda for Python 2.7
-Go to the [downloads page of Anaconda](https://www.anaconda.com/download/) and select the installer for Python 2.7. Once downloaded, installing it should be a straightforward process. Anaconda has along with it most of the packages we need.
-> OpenCV for Python 2.7
-This [page](https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_setup/py_setup_in_windows/py_setup_in_windows.html) explains it quite well.
+```
+Anaconda for Python 2.7
+```
+Go to the [downloads page of Anaconda](https://www.anaconda.com/download/) and select the installer for Python 2.7. Once downloaded, installing it should be a straightforward process. Anaconda has along with it most of the packages we need.  
+```
+OpenCV for Python 2.7
+```
+This [page](https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_setup/py_setup_in_windows/py_setup_in_windows.html) explains it quite well.  
 ## Running
 Run [lbg_random.py](https://github.com/droidadroit/LBG/blob/master/lbg_random.py) for randomly initialized codebook. Run [lbg_split.py](https://github.com/droidadroit/LBG/blob/master/lbg_split.py) for codebook initialized by splitting technique.  
 There are a few parameters to be set before running the code.
