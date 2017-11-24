@@ -2,20 +2,13 @@
 A lenna image is compressed by vector quantization using Linde-Buzo-Gray algorithm. The image is divided into blocks of size `4 x 4` and the corresponding vectors are fed to the LBG algorithm. This generates a codebook of a predetermined size which is used to generate the reconstructed image.  
 ## Getting Started
 ### Prerequisites
-```
-Anaconda for Python 2.7
-```
-```
-OpenCV for Python 2.7
-```
+1. **Anaconda for Python 2.7**
+2. **OpenCV for Python 2.7**  
 ### Installing
-```
-Anaconda for Python 2.7
-```
-Go to the [downloads page of Anaconda](https://www.anaconda.com/download/) and select the installer for Python 2.7. Once downloaded, installing it should be a straightforward process. Anaconda has along with it most of the packages we need.  
-```
-OpenCV for Python 2.7
-```
+1. **Anaconda for Python 2.7**  
+Go to the [downloads page of Anaconda](https://www.anaconda.com/download/) and select the installer for Python 2.7. Once downloaded, installing it should be a straightforward process. Anaconda has along with it most of the packages we need.   
+
+2. **OpenCV for Python 2.7**  
 This [page](https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_setup/py_setup_in_windows/py_setup_in_windows.html) explains it quite well.  
 ## Running
 Before running `lbg_random.py` for randomly initialized codebook and `lbg_split.py` for codebook initialized by splitting technique, there are a few parameters to be set.  
