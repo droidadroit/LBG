@@ -1,5 +1,5 @@
 # Image compression using LBG
-A lenna image is compressed by vector quantization using Linde-Buzo-Gray algorithm. The image is divided into blocks of size `4 x 4` and the corresponding vectors are fed to the LBG algorithm. This generates a codebook of a predetermined size which is used to generate the reconstructed image.  
+A lenna image is compressed by vector quantization using Linde-Buzo-Gray algorithm. The image is divided into blocks of base size (say `4 x 4`) and the corresponding vectors are fed to the LBG algorithm. This generates a codebook of a predetermined size which is used to generate the reconstructed image.  
 ## Getting Started
 ### Prerequisites
 1. **Anaconda for Python 2.7**
